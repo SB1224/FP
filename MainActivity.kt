@@ -30,9 +30,9 @@ class MainActivity : AppCompatActivity() {
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {     //Při úspěchu
                     super.onAuthenticationSucceeded(result)
                     notifyUser("Authentication Success!")
-                    val openURL = Intent(android.content.Intent.ACTION_VIEW)
-                    openURL.data = Uri.parse("http://192.168.0.143")
-                    startActivity(openURL)
+                    val openURL = Intent(android.content.Intent.ACTION_VIEW)                  //Aktuálně přenáší na web vytvořený pomocí ESP               
+                    openURL.data = Uri.parse("http://192.168.0.143")                         //Na webu je jen 1 tlačítko které ovládá zámek        
+                    startActivity(openURL)                                                  //Cíl: "stisknout tlačítko" ale zůstat v aplikaci 
                 }
             }
     @SuppressLint("MissingInflatedId")
